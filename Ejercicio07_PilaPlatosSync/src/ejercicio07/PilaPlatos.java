@@ -17,7 +17,7 @@ public class PilaPlatos {
 				this.wait();
 			
 			r = pila.removeLast();
-			this.notifyAll();
+			
 			System.out.printf("- Plato sacado de %s (%d)\n", nombre, pila.size());
 			return r;
 		}
