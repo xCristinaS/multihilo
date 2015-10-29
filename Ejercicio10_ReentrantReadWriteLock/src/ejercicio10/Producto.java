@@ -27,7 +27,6 @@ public class Producto {
 			 cerrojo.readLock().unlock();
 		 }
 		return precio;
-		 
 	}
 	
 	public void setPrecio(float precio){
