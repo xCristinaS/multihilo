@@ -9,7 +9,6 @@ public class Alumno implements Runnable{
 	}
 	
 	public void run(){
-		//sala.dejarPc(sala.cogerPc());
-		sala.cogerPc();
+		sala.usarPc();
 	}
 }
