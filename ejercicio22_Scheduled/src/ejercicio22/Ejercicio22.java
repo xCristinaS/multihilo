@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class Ejercicio22 {
 
 	public static void main(String[] args) {
-		
+		// Creo un ejecutor para tareas planificadas con 1 hilo
         ScheduledThreadPoolExecutor ejecutor = (ScheduledThreadPoolExecutor) Executors.newScheduledThreadPool(1);
         // Envío cinco tareas al ejecutor para que sean ejecutadas con un
         // cierto retardo respecto a cuando son enviadas:
