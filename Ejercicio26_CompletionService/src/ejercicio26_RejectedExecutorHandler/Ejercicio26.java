@@ -1,4 +1,4 @@
-package ejercicio26;
+package ejercicio26_RejectedExecutorHandler;
 
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutorCompletionService;
@@ -12,7 +12,10 @@ public class Ejercicio26 {
 		
 		//ThreadPoolExecutor ejecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
 		ThreadPoolExecutor ejecutor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
-		CompletionService<String> servicio = new ExecutorCompletionService<String>(ejecutor);
+		CompletionService<String> servicio;
+		TareasRechazadas gestor = new TareasRechazadas();
+		ejecutor.setRejectedExecutionHandler(gestor);
+		servicio = new ExecutorCompletionService<String>(ejecutor);
 		Cartero cartero = new Cartero(servicio);
 		cartero.start();
 		for (int i = 1; i <= 5; i++)

@@ -1,4 +1,4 @@
-package ejercicio26;
+package ejercicio26_RejectedExecutorHandler;
 
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutionException;

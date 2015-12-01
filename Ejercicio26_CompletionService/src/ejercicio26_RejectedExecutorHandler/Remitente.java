@@ -1,8 +1,7 @@
-package ejercicio26;
+package ejercicio26_RejectedExecutorHandler;
 
 import java.util.Random;
 import java.util.concurrent.CompletionService;
-import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 
 public class Remitente extends Thread {
@@ -23,9 +22,7 @@ public class Remitente extends Thread {
 				TimeUnit.SECONDS.sleep(rnd.nextInt(10));
 				enviarCarta();
 			}
-		} catch (InterruptedException | RejectedExecutionException e){
-			System.out.println("OFICINA CERRADA: " + nombre);
-		}
+		} catch (InterruptedException e){}
 	}
 	
 	private void enviarCarta(){
