@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ejercicio29_RelojHiloSec</string>
+    <string name="parar">Parar</string>
+    <string name="iniciar">Iniciar</string>
+</resources>
