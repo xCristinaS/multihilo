@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Ejercicio32_HttpURLConnection</string>
+    <string name="edad">Edad:</string>
+</resources>

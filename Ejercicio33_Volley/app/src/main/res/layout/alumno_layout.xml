@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_margin="@dimen/dp16"
+        android:id="@+id/imgFoto"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="@dimen/dp90" />
+
+    <TextView
+        android:layout_margin="@dimen/dp16"
+        android:layout_toRightOf="@id/imgFoto"
+        android:id="@+id/lblNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre: "/>
+
+    <TextView
+        android:layout_margin="@dimen/dp16"
+        android:layout_toRightOf="@id/lblNombre"
+        android:id="@+id/lblEdad"
+        android:text="Edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginLeft="@dimen/dp16"
+        android:text="direccion"
+        android:layout_toRightOf="@id/imgFoto"
+        android:layout_below="@id/lblNombre"
+        android:id="@+id/lblDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_toRightOf="@id/imgFoto"
+        android:text="telefono"
+        android:layout_below="@id/lblDireccion"
+        android:id="@+id/lblTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_below="@id/lblDireccion"
+        android:layout_toRightOf="@id/lblTelefono"
+        android:text="Repetidor"
+        android:id="@+id/lblRepetidor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_toRightOf="@id/lblRepetidor"
+        android:layout_below="@id/lblDireccion"
+        android:text="curso"
+        android:id="@+id/lblCurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
