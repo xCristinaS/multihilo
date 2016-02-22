@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ejercicio39_ServiceApiTimeZoneDB</string>
+    <string name="action_settings">Settings</string>
+    <string name="miAccion">c.ejercicio39_serviceapitimezonedb.action.MI_ACCION</string>
+</resources>
