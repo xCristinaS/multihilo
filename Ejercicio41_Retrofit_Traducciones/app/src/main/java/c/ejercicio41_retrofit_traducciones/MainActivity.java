@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,8 +18,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
-    private final String KEY = "trnsl.1.1.20160219T114153Z.08a56fcdd8347276.2054e9715a6d4f29e494f247eb14a767c65e0e3f";
 
     private Spinner spLenguajeFrom, spLenguajeTo;
     private TextView lblTraduccion;
@@ -52,16 +51,18 @@ public class MainActivity extends AppCompatActivity {
     private void obtenerTraduccion() {
         String idiomaFrom = obtenerAbr((String)spLenguajeFrom.getSelectedItem()), idiomaTo = obtenerAbr((String)spLenguajeTo.getSelectedItem()), text = txtTexto.getText().toString();
 
-        Call<String> llamada = MyRetrofit.getMyRetrofitInstance().getServicio().getTraduccion(KEY, text, String.format("%s-%s",idiomaFrom, idiomaTo));
-        llamada.enqueue(new Callback<String>() {
+        Call<Respuesta> llamada = MyRetrofit.getMyRetrofitInstance().getServicio().getTraduccion(text, String.format("%s-%s",idiomaFrom, idiomaTo));
+        llamada.enqueue(new Callback<Respuesta>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                lblTraduccion.setText(response.body());
+            public void onResponse(Call<Respuesta> call, Response<Respuesta> response) {
+                Respuesta r = response.body();
+                if (r != null && r.getText() != null && !r.getText().isEmpty())
+                    lblTraduccion.setText(r.getText().get(0));
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                System.out.println();
+            public void onFailure(Call<Respuesta> call, Throwable t) {
+
             }
         });
 
