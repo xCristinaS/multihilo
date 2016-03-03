@@ -1,7 +1,5 @@
 package c.examen2t;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         lblNombre.setText(r.getName());
         lblbDescripcion.setText(r.getWeather().get(0).getDescription());
         Picasso.with(this).load(CADENA_IMG_ICONO + r.getWeather().get(0).getIcon()).into(imgIco);
-        lblTemperatura.setText(String.format("%s\nmin %.2f ºC\nmax %.2f ºC\nmedia %.2f ºC", getString(R.string.temperatura), r.getMain().getTempMin(), r.getMain().getTempMax(), r.getMain().getTemp()));
+        lblTemperatura.setText(String.format("%s\nmin %.2f ºC\nmax %.2f ºC\nmedia %.2f ºC", getString(R.string.temperatura), r.getMain().getTemp_min(), r.getMain().getTemp_max(), r.getMain().getTemp()));
         lblHumedad.setText(String.format("%s %.2f %s", getString(R.string.humedad),r.getMain().getHumidity(), "%"));
         lblViento.setText(String.format("%s\n%s %.2f %s\n%s %.2f º", getString(R.string.viento), getString(R.string.velocidad), r.getWind().getSpeed(), getString(R.string.mps), getString(R.string.direccion), r.getWind().getDeg()));
         lblNubosidad.setText(String.format("%s %.2f %s", getString(R.string.nubosidad), r.getClouds().getAll(), "%"));

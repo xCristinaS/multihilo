@@ -1,5 +1,7 @@
 package c.examen2t.pojos;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -301,8 +303,8 @@ public class Respuesta {
         private Float temp;
         private Float pressure;
         private Float humidity;
-        private Double tempMin;
-        private Double tempMax;
+        private Double temp_min;
+        private Double temp_max;
         private Float seaLevel;
         private Float grndLevel;
 
@@ -363,37 +365,37 @@ public class Respuesta {
         /**
          *
          * @return
-         * The tempMin
+         * The temp_min
          */
-        public Double getTempMin() {
-            return tempMin;
+        public Double getTemp_min() {
+            return temp_min;
         }
 
         /**
          *
-         * @param tempMin
+         * @param temp_min
          * The temp_min
          */
-        public void setTempMin(Double tempMin) {
-            this.tempMin = tempMin;
+        public void setTemp_min(Double temp_min) {
+            this.temp_min = temp_min;
         }
 
         /**
          *
          * @return
-         * The tempMax
+         * The temp_max
          */
-        public Double getTempMax() {
-            return tempMax;
+        public Double getTemp_max() {
+            return temp_max;
         }
 
         /**
          *
-         * @param tempMax
+         * @param temp_max
          * The temp_max
          */
-        public void setTempMax(Double tempMax) {
-            this.tempMax = tempMax;
+        public void setTemp_max(Double temp_max) {
+            this.temp_max = temp_max;
         }
 
         /**
@@ -632,6 +634,7 @@ public class Respuesta {
 
     public class Rain {
 
+        @SerializedName("3h")
         private Double _3h;
 
         /**
